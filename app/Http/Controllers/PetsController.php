@@ -22,11 +22,11 @@ class PetsController extends Controller
         return view("pets/show", compact("pet"));
     }
 
-    public function create()
+    public function create($id)
     {
         $pet = new Pet();
 
-        return view("pets/create", compact("pet"));
+        return view("pets/create", compact("pet", "id"));
     }
 
     public function store(Request $request)
@@ -37,15 +37,12 @@ class PetsController extends Controller
             "breed" => "required"
         ]);
         
-        $owner = new Owner();
+        $pet = new Pet();
 
-        $owner->first_name = $request->input("first_name");
-        $owner->surname = $request->input("surname");
-        $owner->address = $request->input("address");
-        $owner->email = $request->input("email");
-        $owner->phone = $request->input("phone");
+        $pet->first_name = $request->input("first_name");
+        $pet->surname = $request->input("surname");
 
-        $owner->save();
+        $pet->save();
 
         session()->flash("success_message", "Owner was saved.");
 

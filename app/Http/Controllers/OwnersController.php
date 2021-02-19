@@ -22,7 +22,7 @@ class OwnersController extends Controller
         return view("owners/create", compact("owner"));
     }
 
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
         //validation
         $this->validate($request, [
