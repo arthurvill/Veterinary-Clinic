@@ -1,5 +1,6 @@
 /public/js
 /public/css
+/database/seeders
 /public/images
 /public/mix-manifest.json
 /node_modules
