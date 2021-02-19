@@ -21,4 +21,34 @@ class PetsController extends Controller
 
         return view("pets/show", compact("pet"));
     }
+
+    public function create()
+    {
+        $pet = new Pet();
+
+        return view("pets/create", compact("pet"));
+    }
+
+    public function store(Request $request)
+    {
+        //validation
+        $this->validate($request, [
+            "name" => "required",
+            "breed" => "required"
+        ]);
+        
+        $owner = new Owner();
+
+        $owner->first_name = $request->input("first_name");
+        $owner->surname = $request->input("surname");
+        $owner->address = $request->input("address");
+        $owner->email = $request->input("email");
+        $owner->phone = $request->input("phone");
+
+        $owner->save();
+
+        session()->flash("success_message", "Owner was saved.");
+
+        return redirect(action("PetsController@index"));
+    }
 }
