@@ -51,7 +51,7 @@ class PetsController extends Controller
         $pet->owner_id = $id;
         $pet->save();
 
-        session()->flash("success_message", "Owner was saved.");
+        session()->flash("success_message", "Pet was saved.");
 
         return redirect(action("PetsController@index"));
     }
