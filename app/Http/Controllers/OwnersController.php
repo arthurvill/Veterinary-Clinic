@@ -32,5 +32,14 @@ class OwnersController extends Controller
 
         $owner->first_name = $request->input("first_name");
         $owner->surname = $request->input("surname");
+        $owner->address = $request->input("address");
+        $owner->email = $request->input("email");
+        $owner->phone = $request->input("phone");
+
+        $owner->save();
+
+        session()->flash("success_message", "Owner was saved.");
+
+        return redirect(action("PetsController@index"));
     }
 }
