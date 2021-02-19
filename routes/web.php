@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Owner;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +27,4 @@ Route::get("/owners/create", "OwnersController@create");
 Route::get("/owners/{id}", "OwnersController@show");
 Route::post("/owners/store", "OwnersController@store");
 Route::get("/owners/edit/{id}", "OwnersController@edit");
+Route::post("/owners/update/{id}", "OwnersController@update");

@@ -1,4 +1,4 @@
-<h2>Create a new pet owner</h2>
+<h2>{{ $action == "create" ? "Create a new pet owner" : "Edit pet owner" }}</h2>
 
 @if (count($errors) > 0)
     <div class="alert alert-danger">
@@ -10,7 +10,7 @@
     </div>
 @endif
 
-<form action="{{ action('OwnersController@store') }}" method="post">
+<form action="{{ action(($action == "create") ? 'OwnersController@store' : 'OwnersController@update', $owner->id) }}" method="post">
     @csrf
     <label for="">First name: </label>
     <input type="text" name="first_name" value="{{ old('first_name', $owner->first_name)}}">
