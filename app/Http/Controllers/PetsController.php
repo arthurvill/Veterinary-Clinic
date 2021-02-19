@@ -19,7 +19,7 @@ class PetsController extends Controller
     {
         $petName = $request->input("name");
         
-        $pets = Pet::where('name', '=', $petName)->orderBy('name', 'asc')->get();
+        $pets = Pet::where('name', 'like', '%' . $petName . '%')->orderBy('name', 'asc')->get();
 
         return view("pets/search", compact('pets'));
     }
