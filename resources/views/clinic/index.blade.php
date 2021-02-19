@@ -8,8 +8,21 @@
 
 <h3>Search by pet name</h3>
 <form action="{{ action('PetsController@search') }}">
-    <input type="text" name="name">&nbsp;
-    <button>Search</button>
+  
+  <label for="">Name: </label>
+  <input type="text" name="name"><br>
+  <button>Search</button>
+    
+</form>
+
+<h3>Search by owner's name</h3>
+<form action="{{ action('OwnersController@search') }}">
+   
+  <label for="">First name: </label>
+  <input type="text" name="first_name"><br>
+  <label for="">Surname: </label>
+  <input type="text" name="surname"><br>
+  <button>Search</button>
     
 </form>
 

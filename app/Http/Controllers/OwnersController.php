@@ -17,6 +17,16 @@ class OwnersController extends Controller
         return view("owners/show", compact("owner"));
     }
 
+    public function search(Request $request)
+    {
+        $firstName = $request->input("first_name");
+        $surname = $request->input("surname");
+        
+        $owners = Owner::where('first_name', 'like', '%' . $firstName . '%')->where('surname', 'like', '%' . $surname . '%')->orderBy('first_name', 'asc')->get();
+
+        return view("owners/search", compact('owners'));
+    }
+
     public function create()
     {
         $owner = new Owner();

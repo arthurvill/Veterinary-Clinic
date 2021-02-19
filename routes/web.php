@@ -27,6 +27,7 @@ Route::get("/pets/edit/{id}", "PetsController@edit");
 Route::post("/pets/update/{id}", "PetsController@update");
 
 Route::get("/owners/create", "OwnersController@create");
+Route::get("/owners/search", "OwnersController@search");
 Route::get("/owners/{id}", "OwnersController@show");
 Route::post("/owners/store", "OwnersController@store");
 Route::get("/owners/edit/{id}", "OwnersController@edit");
