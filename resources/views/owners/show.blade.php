@@ -2,6 +2,9 @@
 
 <h1>Owner details</h1>
 
+<button><a href="{{ action("OwnersController@delete") }}">Delete this owner</a></button>
+<button><a href="{{ action("OwnersController@edit") }}">Edit this owner</a></button>
+
 <p><b>First name:</b> {{ $owner->first_name }}</p>
 <p><b>Surname:</b> {{ $owner->surname }}</p>
 
@@ -18,7 +21,8 @@
 <h2>Pets:</h2>
 <ul>
     @foreach ($owner->pets as $pet)
-        <li><a href="{{ action("PetsController@show", $pet->id) }}">{{ $pet->name }}</a></li>
+        <li><a href="{{ action("PetsController@show", $pet->id) }}">{{ $pet->name }} <button><a href="{{ action("PetsController@delete") }}">Delete</a></button>
+            <button><a href="{{ action("PetsController@edit") }}">Edit</a></button></a></li>
     @endforeach
 </ul>
 

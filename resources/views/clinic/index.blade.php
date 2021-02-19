@@ -6,7 +6,9 @@
 
 <h1>Clinic's clients</h1>
 
-<a href="{{ action("OwnersController@create") }}">Create a new pet owner</a>
+<button><a href="{{ action("OwnersController@create") }}">Create a new pet owner</a></button>
+
+
 
 <ul>
 
@@ -25,6 +27,3 @@
 @endforeach
 
 </ul>
-
-
-Add owner - /owners/create
