@@ -64,37 +64,4 @@ class PetsController extends Controller
 
         return redirect(action("PetsController@index"));
     }
-
-    public function edit ($id)
-    {
-        $pet = Pet::findOrFail($id);
-        $action = "update";
-
-        return view("pets.create", compact("pet", "action"));
-    }
-
-    public function update (Request $request, $id)
-    {
-        //validation
-        $this->validate($request, [
-            "name" => "required",
-            "breed" => "required",
-            "specie_id" => "required"
-        ]);
-
-        $pet = Pet::findOrFail($id);
-
-        $pet->name = $request->input("name");
-        $pet->breed = $request->input("breed");
-        $pet->age = $request->input("age");
-        $pet->weight = $request->input("weight");
-        $pet->photo = $request->input("photo");
-        $pet->specie_id = $request->input("specie_id");
-        $pet->owner_id = $id;
-        $pet->save();
-
-        session()->flash("success_message", "Pet was saved.");
-
-        return redirect(action("PetsController@index"));
-    }
 }
