@@ -25,3 +25,4 @@ Route::post("/pets/store/{id}", "PetsController@store");
 Route::get("/owners/create", "OwnersController@create");
 Route::get("/owners/{id}", "OwnersController@show");
 Route::post("/owners/store", "OwnersController@store");
+Route::get("/owners/edit/{id}", "OwnersController@edit");
