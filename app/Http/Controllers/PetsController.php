@@ -24,24 +24,31 @@ class PetsController extends Controller
 
     public function create($id)
     {
+
+        $owner = Owner::find($id);
         $pet = new Pet();
 
-        return view("pets/create", compact("pet", "id"));
+        return view("pets/create", compact("pet", "owner"));
     }
 
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
         //validation
         $this->validate($request, [
             "name" => "required",
-            "breed" => "required"
+            "breed" => "required",
+            "specie_id" => "required"
         ]);
         
         $pet = new Pet();
 
-        $pet->first_name = $request->input("first_name");
-        $pet->surname = $request->input("surname");
-
+        $pet->name = $request->input("name");
+        $pet->breed = $request->input("breed");
+        $pet->age = $request->input("age");
+        $pet->weight = $request->input("weight");
+        $pet->photo = $request->input("photo");
+        $pet->specie_id = $request->input("specie_id");
+        $pet->owner_id = $id;
         $pet->save();
 
         session()->flash("success_message", "Owner was saved.");
