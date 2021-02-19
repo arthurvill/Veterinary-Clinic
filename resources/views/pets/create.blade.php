@@ -16,8 +16,8 @@
     <input type="text" name="name" value="{{ old('name', $pet->name)}}">
     <br><br>
     <label for="specie_id">Species: </label>
-    <select name="specie_id" id="specie_id" form="species-form">
-        <option value="1">Dog</option>
+    <select name="specie_id" id="specie_id">
+        <option value="1" selected>Dog</option>
         <option value="2">Cat</option>
         <option value="3">Parrot</option>
         <option value="4">Snake</option>
