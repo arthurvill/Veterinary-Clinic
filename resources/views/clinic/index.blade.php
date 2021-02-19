@@ -1,4 +1,10 @@
-<h1>Clinic's clients</h1>
+@if(Session::has('success_message'))
+    <div class="alert alert-success">
+        {{ Session::get('success_message') }}
+    </div>
+@endif
+
+h1>Clinic's clients</h1>
 
 
 <ul>
