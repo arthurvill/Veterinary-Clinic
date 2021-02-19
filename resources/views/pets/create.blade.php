@@ -16,11 +16,11 @@
     <input type="text" name="name" value="{{ old('name', $pet->name)}}">
     <br><br>
     <label for="specie_id">Species: </label>
-    <select name="specie_id" id="specie_id" form="species-form">
-        <option value="1">Dog</option>
-        <option value="2">Cat</option>
-        <option value="3">Parrot</option>
-        <option value="4">Snake</option>
+    <select name="specie_id" id="specie_id">
+        <option {{ old('specie_id', $pet->specie_id) == 1 ? "selected" : ""}} value="1">Dog</option>
+        <option {{ old('specie_id', $pet->specie_id) == 2 ? "selected" : ""}} value="2">Cat</option>
+        <option {{ old('specie_id', $pet->specie_id) == 3 ? "selected" : ""}} value="3">Parrot</option>
+        <option {{ old('specie_id', $pet->specie_id) == 4 ? "selected" : ""}} value="4">Snake</option>
       </select>
     <br><br>
     <label for="">Breed: </label>
