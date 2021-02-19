@@ -78,4 +78,18 @@ class OwnersController extends Controller
 
         return redirect(action("PetsController@index"));
     }
+
+    public function delete ($id)
+    {
+        $owner = Owner::find($id);
+
+        foreach($owner->pets as $pet)
+        {
+            $pet->delete();
+        }
+        $owner->delete();
+
+        return redirect(action("PetsController@index"));
+    }
+
 }

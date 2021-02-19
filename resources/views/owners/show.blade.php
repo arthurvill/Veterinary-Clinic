@@ -2,7 +2,7 @@
 
 <h1>Owner details</h1>
 
-{{-- <button><a href="{{ action("OwnersController@delete") }}">Delete this owner</a></button> --}}
+<button><a href="{{ action("OwnersController@delete", $owner->id) }}">Delete this owner</a></button>
 <button><a href="{{ action("OwnersController@edit", $owner->id) }}">Edit this owner</a></button>
 
 <p><b>First name:</b> {{ $owner->first_name }}</p>
