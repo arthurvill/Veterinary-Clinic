@@ -6,15 +6,14 @@
 
 <h1>Clinic's clients</h1>
 
-<button><a href="{{ action("OwnersController@create") }}">Create a new pet owner</a></button>
-
+<h3>Search by pet name</h3>
 <form action="{{ action('PetsController@search') }}">
-    <input type="text" name="name">
-
+    <input type="text" name="name">&nbsp;
+    <button>Search</button>
     
 </form>
 
-
+<button><a href="{{ action("OwnersController@create") }}">Create a new pet owner</a></button>
 
 <ul>
 

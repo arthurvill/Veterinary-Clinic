@@ -15,6 +15,15 @@ class PetsController extends Controller
         return view("clinic/index", compact("owners"));
     }
 
+    public function search(Request $request)
+    {
+        $petName = $request->input("name");
+        
+        $pets = Pet::where('name', '=', $petName)->orderBy('name', 'asc')->get();
+
+        return view("pets/search", compact('pets'));
+    }
+
     public function show($id)
     {
         $pet = Pet::find($id);
