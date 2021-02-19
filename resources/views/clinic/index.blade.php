@@ -7,11 +7,11 @@
 <h1>Clinic's clients</h1>
 
 <button><a href="{{ action("OwnersController@create") }}">Create a new pet owner</a></button>
-
+{{-- 
 <form action="{{ action('PetsController@search') }}">
     <input type="text" name="name">
 
-    
+     --}}
 </form>
 
 
