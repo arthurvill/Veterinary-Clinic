@@ -21,3 +21,5 @@
         <li><a href="{{ action("PetsController@show", $pet->id) }}">{{ $pet->name }}</a></li>
     @endforeach
 </ul>
+
+<a href="{{ action("PetsController@create", $owner->id) }}">Add a new pet</a>
