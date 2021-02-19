@@ -18,5 +18,14 @@
     <label for="">Surname: </label>
     <input type="text" name="surname" value="{{ old('surname', $owner->surname)}}">
     <br><br>
+    <label for="">Address: </label>
+    <input type="text" name="address" value="{{ old('address', $owner->address)}}">
+    <br><br>
+    <label for="">E-mail: </label>
+    <input type="text" name="email" value="{{ old('email', $owner->email)}}">
+    <br><br>
+    <label for="">Phone: </label>
+    <input type="text" name="phone" value="{{ old('phone', $owner->phone)}}">
+    <br><br>
     <button>Submit</button>
 </form>
