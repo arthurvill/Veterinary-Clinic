@@ -10,7 +10,7 @@
     </div>
 @endif
 
-<form action="{{ action('PetsController@store', $owner->id) }}" method="post">
+<form action="{{ action(($action == "create") ? 'PetsController@store' : 'PetsController@update', $owner->id) }}" method="post">
     @csrf
     <label for="">Name: </label>
     <input type="text" name="name" value="{{ old('name', $pet->name)}}">

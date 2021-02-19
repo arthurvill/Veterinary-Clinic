@@ -23,6 +23,8 @@ Route::get("/pets/search", "PetsController@search");
 Route::get("/pets/{id}", "PetsController@show");
 Route::get("/pets/create/{id}", "PetsController@create");
 Route::post("/pets/store/{id}", "PetsController@store");
+Route::get("/pets/edit/{id}", "PetsController@edit");
+Route::post("/pets/update/{id}", "PetsController@update");
 
 Route::get("/owners/create", "OwnersController@create");
 Route::get("/owners/{id}", "OwnersController@show");

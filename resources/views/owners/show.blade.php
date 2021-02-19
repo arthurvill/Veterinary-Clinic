@@ -19,11 +19,11 @@
 @endif
 
 <h2>Pets:</h2>
-{{-- <ul>
+<ul>
     @foreach ($owner->pets as $pet)
-        <li><a href="{{ action("PetsController@show", $pet->id) }}">{{ $pet->name }} <button><a href="{{ action("PetsController@delete") }}">Delete</a></button>
-            <button><a href="{{ action("PetsController@edit") }}">Edit</a></button></a></li>
+        <li><a href="{{ action("PetsController@show", $pet->id) }}">{{ $pet->name }} <button><a href="{{ action("PetsController@edit") }}">Edit</a></button>
+        </li>
     @endforeach
-</ul> --}}
+</ul>
 
 <a href="{{ action("PetsController@create", $owner->id) }}">Add a new pet</a>
