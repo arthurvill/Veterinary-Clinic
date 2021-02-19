@@ -17,15 +17,13 @@ class CreatePetsTable extends Migration
             $table->id();
 
             $table->unsignedInteger("owner_id");
-            $table->unsignedInteger("specie_id");
+            $table->unsignedInteger("specie_id")->nullable();
 
             $table->string("name");
-            $table->string("breed");
+            $table->string("breed")->nullable();
             $table->unsignedInteger("age");
             $table->float("weight");
-            $table->string("photo");
-
-            
+            $table->string("photo")->nullable();
 
             $table->timestamps();
         });
