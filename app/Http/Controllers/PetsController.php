@@ -36,8 +36,9 @@ class PetsController extends Controller
 
         $owner = Owner::find($id);
         $pet = new Pet();
+        $action = "create";
 
-        return view("pets/create", compact("pet", "owner"));
+        return view("pets/create", compact("pet", "owner", "action"));
     }
 
     public function store(Request $request, $id)
@@ -90,7 +91,7 @@ class PetsController extends Controller
         $pet->weight = $request->input("weight");
         $pet->photo = $request->input("photo");
         $pet->specie_id = $request->input("specie_id");
-        $pet->owner_id = $id;
+        $pet->owner_id = $request->input("owner_id");
         $pet->save();
 
         session()->flash("success_message", "Pet was saved.");

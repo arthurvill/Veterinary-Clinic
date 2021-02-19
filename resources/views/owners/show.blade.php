@@ -21,7 +21,7 @@
 <h2>Pets:</h2>
 <ul>
     @foreach ($owner->pets as $pet)
-        <li><a href="{{ action("PetsController@show", $pet->id) }}">{{ $pet->name }} <button><a href="{{ action("PetsController@edit") }}">Edit</a></button>
+        <li><a href="{{ action("PetsController@show", $pet->id) }}">{{ $pet->name }} <button><a href="{{ action("PetsController@edit", $pet->id)}}">Edit</a></button>
         </li>
     @endforeach
 </ul>
