@@ -1,4 +1,4 @@
-<h2>Create a new pet for {{-- {{ $id }} --}}</h2>
+<h2>Create a new pet for {{ $owner->first_name }} {{ $owner->surname }}</h2>
 
 @if (count($errors) > 0)
     <div class="alert alert-danger">
@@ -10,25 +10,30 @@
     </div>
 @endif
 
-<form action="{{ action('PetsController@store', $id) }}" method="post">
+<form action="{{ action('PetsController@store', $owner->id) }}" method="post">
     @csrf
     <label for="">Name: </label>
-    <input type="text" name="first_name" value="{{ old('name', $pet->name)}}">
+    <input type="text" name="name" value="{{ old('name', $pet->name)}}">
     <br><br>
-    <label for="">Species: </label>
-    <input type="text" name="surname" value="{{ old('specie_id', $pet->specie_id)}}">
+    <label for="specie_id">Species: </label>
+    <select name="specie_id" id="specie_id" form="species-form">
+        <option value="1">Dog</option>
+        <option value="2">Cat</option>
+        <option value="3">Parrot</option>
+        <option value="4">Snake</option>
+      </select>
     <br><br>
     <label for="">Breed: </label>
-    <input type="text" name="address" value="{{ old('address', $pet->breed)}}">
+    <input type="text" name="breed" value="{{ old('breed', $pet->breed)}}">
     <br><br>
     <label for="">Age: </label>
-    <input type="text" name="email" value="{{ old('email', $pet->age)}}">
+    <input type="text" name="age" value="{{ old('age', $pet->age)}}">
     <br><br>
     <label for="">Weight: </label>
-    <input type="text" name="phone" value="{{ old('phone', $pet->weight)}}">
+    <input type="text" name="weight" value="{{ old('weight', $pet->weight)}}">
     <br><br>
     <label for="">Photo: </label>
-    <input type="text" name="phone" value="{{ old('photo', $pet->photo)}}">
+    <input type="text" name="photo" value="{{ old('photo', $pet->photo)}}">
     <br><br>
     <button>Submit</button>
 </form>
