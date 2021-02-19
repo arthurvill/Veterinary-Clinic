@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Owner;
+use App\Models\Pet;
 
 class PetsController extends Controller
 {
@@ -14,8 +15,10 @@ class PetsController extends Controller
         return view("clinic/index", compact("owners"));
     }
 
-    public function show()
+    public function show($id)
     {
-        
+        $pet = Pet::find($id);
+
+        return view("pets/show", compact("pet"));
     }
 }
