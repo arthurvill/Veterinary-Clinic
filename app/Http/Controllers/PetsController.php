@@ -11,6 +11,11 @@ class PetsController extends Controller
     {
         $owners = Owner::orderBy("first_name")->get();
 
-        return view("clinic/index", compact($owners));
+        return view("clinic/index", compact("owners"));
+    }
+
+    public function show()
+    {
+        
     }
 }
