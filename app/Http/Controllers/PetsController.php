@@ -65,7 +65,6 @@ class PetsController extends Controller
 
         return redirect(action("PetsController@index"));
     }
-<<<<<<< HEAD
 
     public function edit ($id)
     {
@@ -99,6 +98,4 @@ class PetsController extends Controller
 
         return redirect(action("PetsController@index"));
     }
-=======
->>>>>>> 37b7f922433d1079b2d9831f841a0d18719b43fb
 }
