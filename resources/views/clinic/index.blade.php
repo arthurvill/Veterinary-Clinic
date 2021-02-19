@@ -4,7 +4,7 @@
     </div>
 @endif
 
-h1>Clinic's clients</h1>
+<h1>Clinic's clients</h1>
 
 
 <ul>
