@@ -2,7 +2,7 @@
 
 <h1>Pet details</h1>
 
-<p>Name: <a href="{{ action("OwnersController@show", $pet->owner->id) }}">{{ $pet->owner->first_name }} {{ $pet->owner->surname }}</a></p>
+<p>Owner: <a href="{{ action("OwnersController@show", $pet->owner->id) }}">{{ $pet->owner->first_name }} {{ $pet->owner->surname }}</a></p>
 
 <h3>Name: {{ $pet->name }}</h3>
 <p>Species: {{ $pet->specie->name }}</p>
