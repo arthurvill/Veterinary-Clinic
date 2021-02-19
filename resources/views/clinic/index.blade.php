@@ -6,7 +6,6 @@
 
 <h1>Clinic's clients</h1>
 
-
 <ul>
 
 @foreach ($owners as $owner)
