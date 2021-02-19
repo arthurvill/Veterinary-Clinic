@@ -1,4 +1,8 @@
+<a href="{{ action('PetsController@index') }}">Back to main page</a>
+
 <h1>Pet details</h1>
+
+<p>Name: <a href="{{ action("OwnersController@show", $pet->owner->id) }}">{{ $pet->owner->first_name }} {{ $pet->owner->surname }}</a></p>
 
 <h3>Name: {{ $pet->name }}</h3>
 <p>Species: {{ $pet->specie->name }}</p>
@@ -7,6 +11,4 @@
 <p>Weight: {{ $pet->weight }} lbs</p>
 <h3>Photo of {{ $pet->name }}</h3>
 <img src="../{{ $pet->photo }}" alt="{{ $pet->name }}">
-<br>
-<h2>Owner's details</h2>
-<p>Name:</p>
+
