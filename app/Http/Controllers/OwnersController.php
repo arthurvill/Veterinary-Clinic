@@ -19,7 +19,7 @@ class OwnersController extends Controller
     {
         $owner = new Owner();
 
-        return view("owners/create", compact($owner));
+        return view("owners/create", compact("owner"));
     }
 
     public function store(Request $request)
