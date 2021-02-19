@@ -21,8 +21,8 @@ class CreatePetsTable extends Migration
 
             $table->string("name");
             $table->string("breed")->nullable();
-            $table->unsignedInteger("age");
-            $table->float("weight");
+            $table->unsignedInteger("age")->nullable();
+            $table->float("weight")->nullable();
             $table->string("photo")->nullable();
 
             $table->timestamps();
